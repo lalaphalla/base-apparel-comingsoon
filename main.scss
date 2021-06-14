@@ -1,0 +1,137 @@
+$DesaturatedRed: hsl(0, 36%, 70%);
+$SoftRed: hsl(0, 93%, 68%);
+//$Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+//$Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+// Breakpoints
+@media (min-width: 64em){
+    // styles go here
+  }
+  
+  // 640px, 1024px, 1400px
+  $breakpoints-up: ("medium": "40em", "large": "64em", "xlarge": "87.5em");
+  
+  // 639px, 1023px, 1399px
+  $breakpoints-down: ("small": "39.9375em", "medium": "63.9375em", "large": "87.4375em");
+  
+  @mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+      @content;
+    }
+  }
+  
+  @mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+      @content;
+    }
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Josefin Sans' ;
+    position: relative;
+}
+a{
+    text-decoration: none;
+}
+
+.header{
+    width: 60%;
+}
+
+.img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    .mobile{
+        display: none;
+    }
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+    @include breakpoint-down(medium){
+        position: relative;
+        width: 100%;
+        .desktop{
+            display: none;
+        }
+        .mobile{
+            display: block;
+        }
+    }
+}
+.header{
+    
+    img{
+        padding: 2rem;
+    }
+}
+.hero{
+    &__body{
+        width: 60%;
+        margin: 2rem;
+    }
+    h1{
+        font-size: 4.5rem;
+        font-weight: 600;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: $DesaturatedRed;
+        span{
+            color: #333;            
+        }
+       
+    }
+    p{
+        width: 70%;
+        color: $DesaturatedRed;
+        line-height: 1.5;
+    }
+    &__footer{
+        display: flex;
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+    .email{
+        
+        padding: 1rem;
+        width: 30rem;        
+        border: 0.5px solid;
+        border-radius: 25px;
+        border-color: $DesaturatedRed;
+    }
+    .button{
+        padding: 1rem 2.5rem;
+        cursor: pointer;
+        border-radius: 30px;
+        background: $DesaturatedRed;
+        border: none;
+        margin-left: -3rem;
+        height: 100%;
+        background-image: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+        //background: Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+    }
+    @include breakpoint-down(medium){
+        &__body{
+            width: 80%;
+        }
+        &__footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 2rem;
+        }
+        h1{
+            font-size: 3.5rem;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            width: 100%;
+            margin: 0 1rem;
+        }
+    }
+}

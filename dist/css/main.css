@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Josefin Sans';
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  width: 60%;
+}
+
+.img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40%;
+}
+
+.img .mobile {
+  display: none;
+}
+
+.img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 63.9375em) {
+  .img {
+    position: relative;
+    width: 100%;
+  }
+  .img .desktop {
+    display: none;
+  }
+  .img .mobile {
+    display: block;
+  }
+}
+
+.header img {
+  padding: 2rem;
+}
+
+.hero__body {
+  width: 60%;
+  margin: 2rem;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #ce9797;
+}
+
+.hero h1 span {
+  color: #333;
+}
+
+.hero p {
+  width: 70%;
+  color: #ce9797;
+  line-height: 1.5;
+}
+
+.hero__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.hero .email {
+  padding: 1rem;
+  width: 30rem;
+  border: 0.5px solid;
+  border-radius: 25px;
+  border-color: #ce9797;
+}
+
+.hero .button {
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  border-radius: 30px;
+  background: #ce9797;
+  border: none;
+  margin-left: -3rem;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#f8bfbf), to(#ee8c8c));
+  background-image: linear-gradient(to right, #f8bfbf, #ee8c8c);
+}
+
+@media (max-width: 63.9375em) {
+  .hero__body {
+    width: 80%;
+  }
+  .hero__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 2rem;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  .hero p {
+    text-align: center;
+    width: 100%;
+    margin: 0 1rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
